@@ -1,44 +1,52 @@
 <?php
-    include ('dbconfig.php');
-    $academic_year = $_POST['academic_year'];
-    $grade = $_POST['grade'];
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $gender = $_POST['gender'];
-    $dob = $_POST['dob'];
-    $religion = $_POST['religion'];
-    $nationality = $_POST['nationality'];
-    $birth_place = $_POST['birth_place'];
-    $current_school = $_POST['current_school'];
-    $reason = $_POST['reason'];
-    $permanent_address = $_POST['permanent_address'];
-    $country = $_POST['country'];
-    $state = $_POST['state'];
-    $city = $_POST['city'];
-    $pincode = $_POST['pincode'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    $mobile = $_POST['mobile'];
-    $other_contact = $_POST['other_contact'];
-    $transport = $_POST['transport'];
-    $contacted_before = $_POST['contacted_before'];
-    $comment = $_POST['comment'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        include ('dbconfig.php');
+        $academic_year = $_POST['academic_year'] ?? '';
+        $grade = $_POST['grade'] ?? '';
+        $first_name = $_POST['first_name'] ?? '';
+        $last_name = $_POST['last_name'] ?? '';
+        $gender = $_POST['gender'] ?? '';
+        $dob = $_POST['dob'] ?? '';
+        $religion = $_POST['religion'] ?? '';
+        $nationality = $_POST['nationality'] ?? '';
+        $birth_place = $_POST['birth_place'] ?? '';
+        $current_school = $_POST['current_school'] ?? '';
+        $reason = $_POST['reason'] ?? '';
+        $permanent_address = $_POST['permanent_address'] ?? '';
+        $country = $_POST['country'] ?? '';
+        $state = $_POST['state'] ?? '';
+        $city = $_POST['city'] ?? '';
+        $pincode = $_POST['pincode'] ?? '';
+        $phone = $_POST['phone'] ?? '';
+        $email = $_POST['email'] ?? '';
+        $mobile = $_POST['mobile'] ?? '';
+        $other_contact = $_POST['other_contact'] ?? '';
+        $transport = $_POST['transport'] ?? '';
+        $contacted_before = $_POST['contacted_before'] ?? '';
+        $comment = $_POST['comment'] ?? '';
 
-    if ((isset($first_name) && !empty($first_name)) && (isset($last_name) && !empty($last_name)) && (isset($email) && !empty($email)) && (isset($mobile) && !empty($mobile))) {
-        $emailcheck = "SELECT * FROM admission_form WHERE email = '$email'";
-        $emailresult = mysqli_query($mysqli, $emailcheck);
-        if(mysqli_num_rows($emailresult) > 0) {
+        if ((isset($first_name) && !empty($first_name)) && (isset($last_name) && !empty($last_name)) && (isset($email) && !empty($email)) && (isset($mobile) && !empty($mobile))) {
+        $emailcheck = $pdo->prepare("SELECT admission_id FROM admission_form WHERE email = ?");
+        $emailcheck->execute([$email]);
+        if($emailcheck->fetch()) {
             echo "EMAIL_EXIST";
+            exit;
         }
         else{
-            $insertquery = "INSERT INTO `admission_form`(`academic_year`, `admission_to`, `first_name`, `last_name`, `gender`, `dob`, `religion`, `nationality`, `place_of_birth`, `current_school`, `reason_to_change`, `permanent_address`, `country`, `state`, `city`, `pincode`, `phone`, `email`, `mobile`, `other_contact`, `transport`, `contacted_before`, `comment`, `confirmation_code`) VALUES ('$academic_year','$grade','$first_name','$last_name','$gender','$dob','$religion','$nationality','$birth_place','$current_school','$reason','$permanent_address','$country','$state','$city','$pincode','$phone','$email','$mobile','$other_contact','$transport','$contacted_before','$comment','')";
-            if (mysqli_query($mysqli, $insertquery)) {
+            $insertquery = $pdo->prepare("INSERT INTO `admission_form`(`academic_year`, `admission_to`, `first_name`, `last_name`, `gender`, `dob`, `religion`, `nationality`, `place_of_birth`, `current_school`, `reason_to_change`, `permanent_address`, `country`, `state`, `city`, `pincode`, `phone`, `email`, `mobile`, `other_contact`, `transport`, `contacted_before`, `comment`, `confirmation_code`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            if ($insertquery->execute([$academic_year,$grade,$first_name,$last_name,$gender,$dob,$religion,$nationality,$birth_place,$current_school,$reason,$permanent_address,$country,$state,$city,$pincode,$phone,$email,$mobile,$other_contact,$transport,$contacted_before,$comment,''])) {
                 echo "SUCCESS";
+                exit;
             } 
             else {
                 echo "FAILED";
+                exit;
             }
         }
+        }
+
+        echo "FAILED";
+        exit;
     }
 ?>
 <!DOCTYPE html>
