@@ -33,6 +33,238 @@
         .teacher-course .teacher-course-wrapper .edu-table-responsive .col-1 {
             width: 100px!important;
         }
+
+        .staff-directory {
+            padding-top: 10px;
+        }
+
+        .staff-intro {
+            background: #fff;
+            border-left: 5px solid #86bc42;
+            box-shadow: 0 12px 35px rgba(30, 45, 70, 0.08);
+            margin: 0 0 28px;
+            padding: 26px 30px;
+        }
+
+        .staff-intro h3 {
+            color: #25364f;
+            font-size: 24px;
+            font-weight: 900;
+            margin: 0 0 8px;
+        }
+
+        .staff-intro p {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .staff-stats {
+            display: grid;
+            gap: 18px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            margin-bottom: 28px;
+        }
+
+        .staff-stat {
+            background: #25364f;
+            color: #fff;
+            min-height: 108px;
+            padding: 22px;
+            position: relative;
+        }
+
+        .staff-stat:after {
+            background: #86bc42;
+            bottom: 0;
+            content: "";
+            height: 4px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+
+        .staff-stat .value {
+            display: block;
+            font-size: 30px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .staff-stat .label {
+            color: #d8e2ef;
+            display: block;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .staff-table-card {
+            background: #fff;
+            box-shadow: 0 14px 38px rgba(30, 45, 70, 0.1);
+            overflow: hidden;
+        }
+
+        .staff-table-title {
+            align-items: center;
+            background: #f7fafc;
+            border-bottom: 1px solid #dfe7ef;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 24px;
+        }
+
+        .staff-table-title h3 {
+            color: #25364f;
+            font-size: 20px;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .staff-count {
+            background: #eaf4df;
+            color: #5d9827;
+            font-size: 13px;
+            font-weight: 900;
+            padding: 8px 12px;
+            text-transform: uppercase;
+        }
+
+        .staff-table-wrap {
+            overflow-x: auto;
+        }
+
+        .staff-pagination {
+            align-items: center;
+            background: #f7fafc;
+            border-top: 1px solid #dfe7ef;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: space-between;
+            padding: 18px 24px;
+        }
+
+        .staff-page-info {
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .staff-page-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .staff-page-btn {
+            background: #fff;
+            border: 1px solid #d4dee9;
+            color: #25364f;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 900;
+            min-width: 40px;
+            padding: 9px 13px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .staff-page-btn:hover,
+        .staff-page-btn.active {
+            background: #86bc42;
+            border-color: #86bc42;
+            color: #fff;
+        }
+
+        .staff-page-btn:disabled {
+            background: #eef2f7;
+            border-color: #dfe7ef;
+            color: #9aa8b8;
+            cursor: not-allowed;
+        }
+
+        .staff-table {
+            border-collapse: collapse;
+            color: #25364f;
+            font-size: 14px;
+            margin: 0;
+            min-width: 880px;
+            width: 100%;
+        }
+
+        .staff-table th,
+        .staff-table td {
+            border-bottom: 1px solid #e3ebf3;
+            padding: 15px 18px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .staff-table th {
+            background: #25364f;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .staff-table tbody tr:nth-child(even) td {
+            background: #fbfcfe;
+        }
+
+        .staff-table tbody tr:hover td {
+            background: #f6faef;
+        }
+
+        .staff-name {
+            font-weight: 900;
+            min-width: 210px;
+        }
+
+        .designation-badge {
+            background: #eef6e7;
+            color: #5d9827;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 900;
+            min-width: 82px;
+            padding: 7px 10px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 991px) {
+            .staff-stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 560px) {
+            .staff-intro,
+            .staff-table-title {
+                padding: 18px;
+            }
+
+            .staff-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .staff-table-title {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .staff-pagination {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 16px;
+            }
+        }
     </style>
 </head>
 <body><!-- HEADER-->
@@ -48,7 +280,7 @@
                
                 <nav class="navigation collapse navbar-collapse pull-right">
                     <ul class="nav-links nav navbar-nav">
-                        <li class="dropdown active"><a href="index.html" class="main-menu">Home</a>
+                        <li class="dropdown"><a href="index.html" class="main-menu">Home</a>
 <!--
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="index.html" class="link-page">Home page 01</a></li>
@@ -73,14 +305,13 @@
                                 <li><a href="admission_process.html" class="link-page">Admission Process</a></li>
                                 <li><a href="fee_structure.html" class="link-page">Fee Structure</a></li>
                                 <li><a href="school_time_uniform.html" class="link-page">School Time & Uniform</a></li>
-                                <li><a href="#" class="link-page">Book list</a></li>
                             </ul>
                         </li>
                            
-                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Academic<span class="fa fa-angle-down icons-dropdown"></span></a>
+                        <li class="dropdown active"><a href="javascript:void(0)" class="main-menu">Academic<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="staff_details.html" class="link-page">Staff Details</a></li>
-                                <li><a href="#" class="link-page">Holiday List</a></li>
+                                <li><a href="holiday_list.html" class="link-page">Holiday List</a></li>
                                 <li><a href="result.html" class="link-page">Results</a></li>
                                 <li><a href="issued_tc.html" class="link-page">Issued T.C.</a></li>
                                 
@@ -570,6 +801,484 @@
                         </div> -->
 
 
+                        <div class="staff-directory">
+                            <div class="staff-intro">
+                                <h3>Our Faculty & Staff</h3>
+                                <p>Vidya Vijay Bal Mandir is supported by a dedicated team of qualified educators and staff members who guide students with care, discipline, and academic commitment.</p>
+                            </div>
+                            <div class="staff-stats">
+                                <div class="staff-stat">
+                                    <span class="value">61</span>
+                                    <span class="label">Total Staff</span>
+                                </div>
+                                <div class="staff-stat">
+                                    <span class="value">16</span>
+                                    <span class="label">PGT Faculty</span>
+                                </div>
+                                <div class="staff-stat">
+                                    <span class="value">11</span>
+                                    <span class="label">TGT Faculty</span>
+                                </div>
+                                <div class="staff-stat">
+                                    <span class="value">20</span>
+                                    <span class="label">PRT Faculty</span>
+                                </div>
+                            </div>
+                            <div class="staff-table-card">
+                                <div class="staff-table-title">
+                                    <h3>Faculty Details</h3>
+                                    <span class="staff-count">61 Staff Members</span>
+                                </div>
+                                <div class="staff-table-wrap">
+                                    <table class="staff-table">
+                                        <thead>
+                                            <tr>
+                                                <th>S.No.</th>
+                                                <th>Teacher Name</th>
+                                                <th>Designation</th>
+                                                <th>Qualification</th>
+                                                <th>Professional Qualification</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td class="staff-name">Mr. Bhuvnesh Geetey</td>
+                                                <td><span class="designation-badge">Principal</span></td>
+                                                <td>M.A. Sociology</td>
+                                                <td>B.Ed</td>
+                                            </tr>
+                                            <tr>
+                                                <td>02</td>
+                                                <td class="staff-name">SHRADDHA RAJPUT</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>BA</td>
+                                                <td>B.Ed.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>03</td>
+                                                <td class="staff-name">UMA YADAV</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>B.Sc, Maths</td>
+                                                <td>M.Lib</td>
+                                            </tr>
+                                            <tr>
+                                                <td>04</td>
+                                                <td class="staff-name">CHITRALEKHA DUBEY</td>
+                                                <td><span class="designation-badge">TGT</span></td>
+                                                <td>M.COM</td>
+                                                <td>MBA</td>
+                                            </tr>
+                                            <tr>
+                                                <td>05</td>
+                                                <td class="staff-name">POONAM CHOURASIYA</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>M.A. HINDI</td>
+                                                <td>B.Ed.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>06</td>
+                                                <td class="staff-name">HEMLATA BRAHAMWANSHI</td>
+                                                <td><span class="designation-badge">TGT</span></td>
+                                                <td>MA. ECO</td>
+                                                <td>B.Ed.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>07</td>
+                                                <td class="staff-name">JAYA YADAV</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>MBA</td>
+                                                <td>DCA</td>
+                                            </tr>
+                                            <tr>
+                                                <td>08</td>
+                                                <td class="staff-name">SANGYA DUBEY</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>M.Sc.</td>
+                                                <td>B.Ed.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>09</td>
+                                                <td class="staff-name">JYOTI TIWARI</td>
+                                                <td><span class="designation-badge">TGT</span></td>
+                                                <td>M.Sc.</td>
+                                                <td>B.Ed.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td class="staff-name">NANDINI AGRAWAL</td>
+                                                <td><span class="designation-badge">NTT</span></td>
+                                                <td>M.Sc. C.S.</td>
+                                                <td>MONTESSORI RUNING</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td class="staff-name">SNEHA SOLANKI</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>B.Sc. Biology</td>
+                                                <td>B.Ed</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td class="staff-name">SHARAD PRAKASH GAUTAM</td>
+                                                <td><span class="designation-badge">Other</span></td>
+                                                <td>M.LIB.</td>
+                                                <td>M.LIB.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td class="staff-name">HIMANSHU KHATRI</td>
+                                                <td><span class="designation-badge">Other</span></td>
+                                                <td>B. Com</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td class="staff-name">VIBHU PATEL</td>
+                                                <td><span class="designation-badge">Other</span></td>
+                                                <td>B. Com</td>
+                                                <td>BPED Pusring</td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td class="staff-name">TAKREEM AHMED QURESHI</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>M.SC</td>
+                                                <td>M.SC (CHEMISTRY)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>16</td>
+                                                <td class="staff-name">TUSHAR VERMA</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>M.SC</td>
+                                                <td>M.SC (MATHEMATICS)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>17</td>
+                                                <td class="staff-name">VIDHA DIXIT</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>B.Com</td>
+                                                <td>B.Ed.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>18</td>
+                                                <td class="staff-name">PRIYA PATEL</td>
+                                                <td><span class="designation-badge">TGT</span></td>
+                                                <td>B.Sc. Maths</td>
+                                                <td>B.Ed</td>
+                                            </tr>
+                                            <tr>
+                                                <td>19</td>
+                                                <td class="staff-name">AACHAL PARTI</td>
+                                                <td><span class="designation-badge">NTT</span></td>
+                                                <td>BSC, CS</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>20</td>
+                                                <td class="staff-name">Akanxa Arjaria</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>MA</td>
+                                                <td>B.ED</td>
+                                            </tr>
+                                            <tr>
+                                                <td>21</td>
+                                                <td class="staff-name">PINKY AGRAWAL</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>M.COM</td>
+                                                <td>B.ED</td>
+                                            </tr>
+                                            <tr>
+                                                <td>22</td>
+                                                <td class="staff-name">VISHAKHA BANKE</td>
+                                                <td><span class="designation-badge">TGT</span></td>
+                                                <td>BBA</td>
+                                                <td>M.ED</td>
+                                            </tr>
+                                            <tr>
+                                                <td>23</td>
+                                                <td class="staff-name">HINA ALI</td>
+                                                <td><span class="designation-badge">TGT</span></td>
+                                                <td>B.COM</td>
+                                                <td>M.ED</td>
+                                            </tr>
+                                            <tr>
+                                                <td>24</td>
+                                                <td class="staff-name">bharti sharma</td>
+                                                <td><span class="designation-badge">Other</span></td>
+                                                <td>BCA</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>25</td>
+                                                <td class="staff-name">SARIKA GAUR</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>MA</td>
+                                                <td>B.ED</td>
+                                            </tr>
+                                            <tr>
+                                                <td>26</td>
+                                                <td class="staff-name">YASHI DUBEY</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>MSC</td>
+                                                <td>B.ED</td>
+                                            </tr>
+                                            <tr>
+                                                <td>27</td>
+                                                <td class="staff-name">VINOD LAD</td>
+                                                <td><span class="designation-badge">Other</span></td>
+                                                <td>B.A</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>28</td>
+                                                <td class="staff-name">PREETI CHATURVEDI</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>B.COM</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>29</td>
+                                                <td class="staff-name">POOJA BARETHIYA</td>
+                                                <td><span class="designation-badge">TGT</span></td>
+                                                <td>B.COM</td>
+                                                <td>MBA, DCA</td>
+                                            </tr>
+                                            <tr>
+                                                <td>30</td>
+                                                <td class="staff-name">EKTA JAIN</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>BA</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>31</td>
+                                                <td class="staff-name">MUSKAN DUBEY</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>B.A</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>32</td>
+                                                <td class="staff-name">PREETI NEGI</td>
+                                                <td><span class="designation-badge">Other</span></td>
+                                                <td>B.COM</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>33</td>
+                                                <td class="staff-name">GEETA ASRANI</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>B.A</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>34</td>
+                                                <td class="staff-name">SHIVANI GURJAR</td>
+                                                <td><span class="designation-badge">TGT</span></td>
+                                                <td>MBA</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>35</td>
+                                                <td class="staff-name">Ms Ritu Gajwa</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>M.SC.</td>
+                                                <td>B.ED.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>36</td>
+                                                <td class="staff-name">SHWETA SUKLA</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>B SC</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>37</td>
+                                                <td class="staff-name">NEETOO PANDEY</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>B ED</td>
+                                                <td>M SC</td>
+                                            </tr>
+                                            <tr>
+                                                <td>38</td>
+                                                <td class="staff-name">VISHWADEEP PARASHARI</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>BE</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>39</td>
+                                                <td class="staff-name">CHANDNI PAHUJA</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>B ED</td>
+                                                <td>M.COM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>40</td>
+                                                <td class="staff-name">NEHA MAHAJAN</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>B ED</td>
+                                                <td>MBA</td>
+                                            </tr>
+                                            <tr>
+                                                <td>41</td>
+                                                <td class="staff-name">AVANI KHARE</td>
+                                                <td><span class="designation-badge">TGT</span></td>
+                                                <td>M. PHIL</td>
+                                                <td>B.ED</td>
+                                            </tr>
+                                            <tr>
+                                                <td>42</td>
+                                                <td class="staff-name">Mrs Saroja Khopde</td>
+                                                <td><span class="designation-badge">Other</span></td>
+                                                <td>M.A. SOCIOLOGY</td>
+                                                <td>M.A.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>43</td>
+                                                <td class="staff-name">Mrs Rajni Kanwa</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>M. Com.</td>
+                                                <td>M. Com.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>44</td>
+                                                <td class="staff-name">Mrs Neeta Madaniya</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>B. Com.</td>
+                                                <td>B.Com</td>
+                                            </tr>
+                                            <tr>
+                                                <td>45</td>
+                                                <td class="staff-name">Mrs Bhawna Dugaya</td>
+                                                <td><span class="designation-badge">Other</span></td>
+                                                <td>B.A.</td>
+                                                <td>B.A</td>
+                                            </tr>
+                                            <tr>
+                                                <td>46</td>
+                                                <td class="staff-name">Mr Vikas Kushwaha</td>
+                                                <td><span class="designation-badge">Other</span></td>
+                                                <td>M.A. YOGA</td>
+                                                <td>M.A.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>47</td>
+                                                <td class="staff-name">Mrs Shalini Jaiswal</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>M.A.</td>
+                                                <td>Montessori Trained</td>
+                                            </tr>
+                                            <tr>
+                                                <td>48</td>
+                                                <td class="staff-name">Mrs Babita Gour</td>
+                                                <td><span class="designation-badge">Other</span></td>
+                                                <td>M.A.</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>49</td>
+                                                <td class="staff-name">Mrs Alka Singh</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>B.A</td>
+                                                <td>Montessori Trained</td>
+                                            </tr>
+                                            <tr>
+                                                <td>50</td>
+                                                <td class="staff-name">Mrs Sunita Devra</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>MA SOCIOLOGY</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>51</td>
+                                                <td class="staff-name">Mr.Anand Bankey</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>B.Com</td>
+                                                <td>C.A. Inter</td>
+                                            </tr>
+                                            <tr>
+                                                <td>52</td>
+                                                <td class="staff-name">Kishan Batu</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>B.Com</td>
+                                                <td>B.Com</td>
+                                            </tr>
+                                            <tr>
+                                                <td>53</td>
+                                                <td class="staff-name">Chirta Dhodapkar</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>BA</td>
+                                                <td>B.A.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>54</td>
+                                                <td class="staff-name">CHETAN GUPTA</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>B.ED.</td>
+                                                <td>B.SC</td>
+                                            </tr>
+                                            <tr>
+                                                <td>55</td>
+                                                <td class="staff-name">Mrs. Archana Puranik</td>
+                                                <td><span class="designation-badge">TGT</span></td>
+                                                <td>M.A</td>
+                                                <td>B.Ed.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>56</td>
+                                                <td class="staff-name">Mrs. Sangeeta Geetey</td>
+                                                <td><span class="designation-badge">TGT</span></td>
+                                                <td>M.A. in Sanskrit, Sociology</td>
+                                                <td>B.Ed.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>57</td>
+                                                <td class="staff-name">Mr. R.C. Chitrode</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>M.Com.</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>58</td>
+                                                <td class="staff-name">Mr. Priyank Shukla</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>M.Com.</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>59</td>
+                                                <td class="staff-name">Mr.Manoj Shahi</td>
+                                                <td><span class="designation-badge">PGT</span></td>
+                                                <td>M.Sc. Maths</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>60</td>
+                                                <td class="staff-name">Mrs. Ranjana Deshmukh</td>
+                                                <td><span class="designation-badge">Wellness Teacher</span></td>
+                                                <td>M.A. Eco.</td>
+                                                <td>B.Ed</td>
+                                            </tr>
+                                            <tr>
+                                                <td>61</td>
+                                                <td class="staff-name">Mr. Rhahul Chitre</td>
+                                                <td><span class="designation-badge">PRT</span></td>
+                                                <td>B. Com</td>
+                                                <td>-</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="staff-pagination">
+                                    <div class="staff-page-info" id="staffPageInfo">Showing 1-25 of 61 records</div>
+                                    <div class="staff-page-controls" id="staffPageControls"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Previous image-based staff data hidden as requested.
                         <div class="section teacher-course section-padding" >
                             <div class="container teacher-course-wrapper">
                       <img src = 'assets/images/t1.png' width="100%">
@@ -593,6 +1302,7 @@
                                             <img src = 'assets/images/t7.png' width="100%">
                                             </div>
                       </div>
+                        -->
                     </div>
                 </div>
             
@@ -790,6 +1500,63 @@
 <script src="assets/libs/fancybox/js/jquery.fancybox-buttons.js"></script>
 <!-- MAIN JS-->
 <script src="assets/js/main.js"></script>
+<script>
+    (function () {
+        var rows = Array.prototype.slice.call(document.querySelectorAll('.staff-table tbody tr'));
+        var info = document.getElementById('staffPageInfo');
+        var controls = document.getElementById('staffPageControls');
+        var perPage = 25;
+        var currentPage = 1;
+        var totalPages = Math.ceil(rows.length / perPage);
+
+        function renderPage(page) {
+            currentPage = Math.max(1, Math.min(page, totalPages));
+            var start = (currentPage - 1) * perPage;
+            var end = start + perPage;
+
+            rows.forEach(function (row, index) {
+                row.style.display = index >= start && index < end ? '' : 'none';
+            });
+
+            if (info) {
+                info.textContent = 'Showing ' + (start + 1) + '-' + Math.min(end, rows.length) + ' of ' + rows.length + ' records';
+            }
+
+            renderControls();
+        }
+
+        function makeButton(label, page, disabled, active) {
+            var button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'staff-page-btn' + (active ? ' active' : '');
+            button.textContent = label;
+            button.disabled = disabled;
+            button.addEventListener('click', function () {
+                renderPage(page);
+            });
+            return button;
+        }
+
+        function renderControls() {
+            if (!controls) {
+                return;
+            }
+
+            controls.innerHTML = '';
+            controls.appendChild(makeButton('Prev', currentPage - 1, currentPage === 1, false));
+
+            for (var page = 1; page <= totalPages; page++) {
+                controls.appendChild(makeButton(String(page), page, false, page === currentPage));
+            }
+
+            controls.appendChild(makeButton('Next', currentPage + 1, currentPage === totalPages, false));
+        }
+
+        if (rows.length && controls) {
+            renderPage(1);
+        }
+    })();
+</script>
 <!-- LOADING SCRIPTS FOR PAGE--></body>
 
 <!-- Mirrored from swlabs.co/edugate/news-grid-nonsidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Dec 2016 07:38:38 GMT -->

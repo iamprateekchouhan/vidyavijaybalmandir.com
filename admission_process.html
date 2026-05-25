@@ -40,6 +40,101 @@
             background-position: center;
             background-size: cover;
         }
+
+        .admission-documents {
+            background: #f6f9fc;
+            padding: 70px 0;
+        }
+
+        .admission-doc-card {
+            background: #fff;
+            box-shadow: 0 14px 38px rgba(30, 45, 70, 0.1);
+            padding: 34px;
+        }
+
+        .admission-doc-header {
+            border-left: 5px solid #86bc42;
+            margin-bottom: 28px;
+            padding-left: 20px;
+        }
+
+        .admission-doc-header h3 {
+            color: #25364f;
+            font-size: 26px;
+            font-weight: 900;
+            margin: 0 0 10px;
+        }
+
+        .admission-doc-header p {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .document-list {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin: 0;
+            padding: 0;
+        }
+
+        .document-list li {
+            align-items: flex-start;
+            background: #fbfcfe;
+            border: 1px solid #e3ebf3;
+            color: #25364f;
+            display: flex;
+            font-size: 15px;
+            font-weight: 700;
+            gap: 12px;
+            line-height: 1.5;
+            list-style: none;
+            min-height: 72px;
+            padding: 16px;
+        }
+
+        .document-list .doc-number {
+            align-items: center;
+            background: #86bc42;
+            color: #fff;
+            display: inline-flex;
+            flex: 0 0 34px;
+            font-size: 13px;
+            font-weight: 900;
+            height: 34px;
+            justify-content: center;
+            line-height: 1;
+            width: 34px;
+        }
+
+        .admission-note {
+            background: #25364f;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-top: 26px;
+            padding: 18px 22px;
+        }
+
+        .admission-note strong {
+            color: #b8e176;
+        }
+
+        @media (max-width: 767px) {
+            .admission-documents {
+                padding: 45px 0;
+            }
+
+            .admission-doc-card {
+                padding: 22px;
+            }
+
+            .document-list {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body><!-- HEADER-->
@@ -80,14 +175,13 @@
                                 <li><a href="admission_process.html" class="link-page">Admission Process</a></li>
                                 <li><a href="fee_structure.html" class="link-page">Fee Structure</a></li>
                                 <li><a href="school_time_uniform.html" class="link-page">School Time & Uniform</a></li>
-                                <li><a href="#" class="link-page">Book list</a></li>
                             </ul>
                         </li>
                            
                         <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Academic<span class="fa fa-angle-down icons-dropdown"></span></a>
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="staff_details.html" class="link-page">Staff Details</a></li>
-                                <li><a href="#" class="link-page">Holiday List</a></li>
+                                <li><a href="holiday_list.html" class="link-page">Holiday List</a></li>
                                 <li><a href="result.html" class="link-page">Results</a></li>
                                 <li><a href="issued_tc.html" class="link-page">Issued T.C.</a></li>
                                 
@@ -163,6 +257,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Previous admission document points hidden as requested.
                 <div class="section nav-subscribe">
                     <div class="container">
                         <div class="nav-subscribe-wrapper">
@@ -179,6 +274,36 @@
                                                             <p> 8. E - Mail Id</p>
                                                                 <p> 9. Copy of Bank Passbook (Self/Parents)</p></div>
                            
+                        </div>
+                    </div>
+                </div>
+                -->
+                <div class="section admission-documents">
+                    <div class="container">
+                        <div class="admission-doc-card">
+                            <div class="admission-doc-header">
+                                <h3>Documents Required for Admission</h3>
+                                <p>Parents are requested to submit the following documents along with the admission form. All photocopies should be clear and complete for smooth verification.</p>
+                            </div>
+                            <ul class="document-list">
+                                <li><span class="doc-number">1</span><span>T.C. of last school (Original)</span></li>
+                                <li><span class="doc-number">2</span><span>Student's Blood Group</span></li>
+                                <li><span class="doc-number">3</span><span>Photocopy of Result</span></li>
+                                <li><span class="doc-number">4</span><span>Copy of SSSMID</span></li>
+                                <li><span class="doc-number">5</span><span>Student's Aadhar Card</span></li>
+                                <li><span class="doc-number">6</span><span>Father's Aadhar Card</span></li>
+                                <li><span class="doc-number">7</span><span>Mother's Aadhar Card</span></li>
+                                <li><span class="doc-number">8</span><span>4 passport size photographs of child in uniform with name and current date</span></li>
+                                <li><span class="doc-number">9</span><span>1 passport photograph of each parent</span></li>
+                                <li><span class="doc-number">10</span><span>Self / Parent's Passbook</span></li>
+                                <li><span class="doc-number">11</span><span>Student's Digitalized Caste Certificate</span></li>
+                                <li><span class="doc-number">12</span><span>PEN (Permanent Education Number)</span></li>
+                                <li><span class="doc-number">13</span><span>Apaar ID (Automated Permanent Academic Account)</span></li>
+                                <li><span class="doc-number">14</span><span>Birth Certificate (only for Nursery)</span></li>
+                            </ul>
+                            <div class="admission-note">
+                                <strong>Note:</strong> Admission formalities are completed after document verification and submission of the required fee as per school rules.
+                            </div>
                         </div>
                     </div>
                 </div>

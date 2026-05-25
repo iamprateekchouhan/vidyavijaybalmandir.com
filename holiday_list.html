@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>Vidya Vijay Bal Mandir | Results</title>
+<head><title>Vidya Vijay Bal Mandir | Holiday List</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,300">
@@ -8,132 +8,63 @@
     <link type="text/css" rel="stylesheet" href="assets/libs/bootstrap-3.3.5/css/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="assets/css/color-1.css">
     <style>
-        .result-page {
-            padding: 70px 0;
+        .holiday-page {
             background: #f4f7fb;
+            padding: 70px 0;
         }
 
-        .result-intro {
-            margin-bottom: 28px;
-            padding: 26px 30px;
-            background: #fff;
-            border-left: 5px solid #86bc42;
-            border-radius: 8px;
-            box-shadow: 0 14px 34px rgba(37, 54, 79, 0.1);
-        }
-
-        .result-intro h3 {
-            margin: 0 0 8px;
-            color: #25364f;
-            font-size: 24px;
-            font-weight: 900;
-        }
-
-        .result-intro p {
-            margin: 0;
-            color: #6f7d8f;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        .result-summary {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-bottom: 28px;
-        }
-
-        .summary-item {
-            padding: 20px;
-            background: #fff;
-            border: 1px solid #e3e8f0;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 10px 24px rgba(37, 54, 79, 0.08);
-        }
-
-        .summary-item .label {
-            display: block;
-            margin-bottom: 8px;
-            color: #6f7d8f;
-            font-size: 12px;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        .summary-item .value {
-            color: #25364f;
-            font-size: 28px;
-            font-weight: 900;
-            line-height: 1;
-        }
-
-        .result-card {
-            margin-bottom: 34px;
-            overflow: hidden;
+        .holiday-card {
             background: #fff;
             border: 1px solid #dfe7ef;
             border-radius: 8px;
             box-shadow: 0 18px 42px rgba(37, 54, 79, 0.12);
+            overflow: hidden;
         }
 
-        .result-card-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 22px 26px;
-            background: #242c42;
+        .holiday-card-header {
+            background: #25364f;
             color: #fff;
-        }
-
-        .result-card h3 {
-            margin: 0 0 5px;
-            font-size: 20px;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        .result-card-header p {
-            margin: 0;
-            color: rgba(255, 255, 255, 0.78);
-            font-size: 14px;
-        }
-
-        .class-badge {
-            min-width: 82px;
-            padding: 10px 14px;
-            border: 1px solid rgba(255, 255, 255, 0.24);
-            border-radius: 6px;
-            background: rgba(134, 188, 66, 0.18);
-            color: #fff;
-            font-size: 16px;
-            font-weight: 900;
+            padding: 24px 28px;
             text-align: center;
         }
 
-        .result-table-wrap {
-            overflow-x: auto;
-            padding: 0 0 4px;
+        .holiday-card-header h3 {
+            font-size: 24px;
+            font-weight: 900;
+            margin: 0 0 6px;
+            text-transform: uppercase;
         }
 
-        .result-table {
-            width: 100%;
+        .holiday-card-header p {
+            color: #cdd8e6;
+            font-size: 15px;
+            font-weight: 800;
             margin: 0;
+            text-transform: uppercase;
+        }
+
+        .holiday-table-wrap {
+            overflow-x: auto;
+        }
+
+        .holiday-table {
             border-collapse: collapse;
             color: #25364f;
             font-size: 15px;
+            margin: 0;
+            min-width: 760px;
+            width: 100%;
         }
 
-        .result-table th,
-        .result-table td {
-            padding: 16px 18px;
-            border: 0;
+        .holiday-table th,
+        .holiday-table td {
             border-bottom: 1px solid #dfe7ef;
+            padding: 15px 18px;
+            text-align: left;
             vertical-align: middle;
         }
 
-        .result-table th {
+        .holiday-table th {
             background: #f1f7ec;
             color: #25364f;
             font-size: 13px;
@@ -141,52 +72,78 @@
             text-transform: uppercase;
         }
 
-        .result-table td {
+        .holiday-table td {
             background: #fff;
             font-weight: 700;
         }
 
-        .result-table tbody tr:nth-child(even) td {
+        .holiday-table tbody tr:nth-child(even) td {
             background: #fbfcfe;
         }
 
-        .result-table tbody tr:hover td {
+        .holiday-table tbody tr:hover td {
             background: #f6faef;
         }
 
-        .result-table .percentage {
-            color: #86bc42;
+        .holiday-table .date-col {
+            width: 30%;
+        }
+
+        .holiday-table .day-col {
+            width: 30%;
+        }
+
+        .holiday-table .occasion-col {
+            width: 40%;
+        }
+
+        .holiday-table .month-row td,
+        .holiday-table .vacation-row td {
+            background: #25364f !important;
+            color: #25364f;
             font-weight: 900;
+            padding: 12px 18px;
+            text-transform: uppercase;
+        }
+
+        .holiday-table .month-title {
+            align-items: center;
+            color: #fff;
+            display: flex;
+            font-size: 14px;
+            font-weight: 900;
+            gap: 10px;
+            letter-spacing: 0;
+        }
+
+        .holiday-table .month-title:before {
+            background: #86bc42;
+            content: "";
+            display: inline-block;
+            height: 16px;
+            width: 4px;
+        }
+
+        .holiday-table .vacation-row td {
+            background: #eaf4df !important;
+        }
+
+        .holiday-table .vacation-row .month-title {
+            color: #3f6f1d;
+        }
+
+        .holiday-table .empty-row td {
+            color: #7b8794;
+            font-style: italic;
         }
 
         @media (max-width: 767px) {
-            .result-page {
+            .holiday-page {
                 padding: 45px 0;
             }
 
-            .result-summary {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .result-card-header {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .result-card h3 {
-                font-size: 18px;
-            }
-
-            .result-table th,
-            .result-table td {
-                padding: 12px 14px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .result-summary {
-                grid-template-columns: 1fr;
+            .holiday-card-header h3 {
+                font-size: 20px;
             }
         }
     </style>
@@ -244,136 +201,149 @@
     <div class="section background-opacity page-title set-height-top">
         <div class="container">
             <div class="page-title-wrapper">
-                <h2 class="captions">Results</h2>
+                <h2 class="captions">Holiday List</h2>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a></li>
-                    <li class="active"><a href="#">Results</a></li>
+                    <li class="active"><a href="#">Holiday List</a></li>
                 </ol>
             </div>
         </div>
     </div>
-    <section class="result-page">
+    <section class="holiday-page">
         <div class="container">
-            <div class="group-title-index">
-                <h4 class="top-title">Academic Performance</h4>
-                <h2 class="center-title">Board Results</h2>
-                <div class="bottom-title"><i class="bottom-icon icon-a-1-01-01"></i></div>
-            </div>
-            <div class="result-intro">
-                <h3>CBSE Board Result Overview</h3>
-                <p>Year-wise performance record for Classes X and XII, showing registered students, students passed, and pass percentage.</p>
-            </div>
-            <div class="result-summary">
-                <div class="summary-item">
-                    <span class="label">Latest Year</span>
-                    <span class="value">2025</span>
+            <div class="holiday-card">
+                <div class="holiday-card-header">
+                    <h3>Vidya Vijay Bal Mandir</h3>
+                    <p>Holiday List 2026-27</p>
                 </div>
-                <div class="summary-item">
-                    <span class="label">Class X Passed</span>
-                    <span class="value">49</span>
-                </div>
-                <div class="summary-item">
-                    <span class="label">Class XII Passed</span>
-                    <span class="value">193</span>
-                </div>
-                <div class="summary-item">
-                    <span class="label">Best Pass %</span>
-                    <span class="value">92.63</span>
-                </div>
-            </div>
-            <div class="result-card">
-                <div class="result-card-header">
-                    <div>
-                        <h3>Result Class: X</h3>
-                        <p>Secondary school examination performance</p>
-                    </div>
-                    <div class="class-badge">Class X</div>
-                </div>
-                <div class="result-table-wrap">
-                    <table class="result-table">
+                <div class="holiday-table-wrap">
+                    <table class="holiday-table">
                         <thead>
                             <tr>
-                                <th>S.No.</th>
-                                <th>Year</th>
-                                <th>No. of Registered Students</th>
-                                <th>No. of Students Passed</th>
-                                <th>Pass Percentage</th>
-                                <th>Remarks</th>
+                                <th class="date-col">Date</th>
+                                <th class="day-col">Day</th>
+                                <th class="occasion-col">Occasion</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>01</td>
-                                <td>2023</td>
-                                <td>37</td>
-                                <td>28</td>
-                                <td class="percentage">75.67</td>
-                                <td></td>
+                            <tr class="month-row">
+                                <td colspan="3"><span class="month-title">April 2026</span></td>
                             </tr>
                             <tr>
-                                <td>02</td>
-                                <td>2024</td>
-                                <td>36</td>
-                                <td>30</td>
-                                <td class="percentage">83.33</td>
-                                <td></td>
+                                <td>3-Apr-26</td>
+                                <td>Friday</td>
+                                <td>Good Friday</td>
                             </tr>
                             <tr>
-                                <td>03</td>
-                                <td>2025</td>
-                                <td>54</td>
-                                <td>49</td>
-                                <td class="percentage">83.33</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="result-card">
-                <div class="result-card-header">
-                    <div>
-                        <h3>Result Class: XII</h3>
-                        <p>Senior secondary school examination performance</p>
-                    </div>
-                    <div class="class-badge">Class XII</div>
-                </div>
-                <div class="result-table-wrap">
-                    <table class="result-table">
-                        <thead>
-                            <tr>
-                                <th>S.No.</th>
-                                <th>Year</th>
-                                <th>No. of Registered Students</th>
-                                <th>No. of Students Passed</th>
-                                <th>Pass Percentage</th>
-                                <th>Remarks</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>01</td>
-                                <td>2023</td>
-                                <td>102</td>
-                                <td>84</td>
-                                <td class="percentage">82.35</td>
-                                <td></td>
+                                <td>14-Apr-26</td>
+                                <td>Tuesday</td>
+                                <td>Dr. Ambedkar Jayanti</td>
                             </tr>
                             <tr>
-                                <td>02</td>
-                                <td>2024</td>
-                                <td>217</td>
-                                <td>201</td>
-                                <td class="percentage">92.63</td>
-                                <td></td>
+                                <td>20-Apr-26</td>
+                                <td>Monday</td>
+                                <td>Parshuram Jayanti</td>
+                            </tr>
+                            <tr class="vacation-row">
+                                <td colspan="3"><span class="month-title">May 2026 - Summer Vacation</span></td>
+                            </tr>
+                            <tr class="month-row">
+                                <td colspan="3"><span class="month-title">June 2026</span></td>
                             </tr>
                             <tr>
-                                <td>03</td>
-                                <td>2025</td>
-                                <td>212</td>
-                                <td>193</td>
-                                <td class="percentage">91.03</td>
-                                <td></td>
+                                <td>26-Jun-26</td>
+                                <td>Friday</td>
+                                <td>Mohrram</td>
+                            </tr>
+                            <tr class="month-row">
+                                <td colspan="3"><span class="month-title">July 2026</span></td>
+                            </tr>
+                            <tr class="empty-row"><td>-</td><td>-</td><td>No holiday listed</td></tr>
+                            <tr class="month-row">
+                                <td colspan="3"><span class="month-title">August 2026</span></td>
+                            </tr>
+                            <tr>
+                                <td>26-Aug-26</td>
+                                <td>Wednesday</td>
+                                <td>Millad-un-Nabi</td>
+                            </tr>
+                            <tr>
+                                <td>28-Aug-26</td>
+                                <td>Friday</td>
+                                <td>Rakshabandhan</td>
+                            </tr>
+                            <tr class="month-row">
+                                <td colspan="3"><span class="month-title">September 2026</span></td>
+                            </tr>
+                            <tr>
+                                <td>4-Sep-26</td>
+                                <td>Friday</td>
+                                <td>Janmashtmi</td>
+                            </tr>
+                            <tr>
+                                <td>14-Sep-26</td>
+                                <td>Monday</td>
+                                <td>Ganesh Chaturthi</td>
+                            </tr>
+                            <tr>
+                                <td>26-Sep-26</td>
+                                <td>Saturday</td>
+                                <td>Anant Chaturdashi</td>
+                            </tr>
+                            <tr class="month-row">
+                                <td colspan="3"><span class="month-title">October 2026</span></td>
+                            </tr>
+                            <tr>
+                                <td>2-Oct-26</td>
+                                <td>Friday</td>
+                                <td>Gandhi Jayanti</td>
+                            </tr>
+                            <tr>
+                                <td>19-Oct-26 to 21-Oct-26</td>
+                                <td>Monday to Wednesday</td>
+                                <td>Dusshera Holidays</td>
+                            </tr>
+                            <tr>
+                                <td>26-Oct-26</td>
+                                <td>Monday</td>
+                                <td>Valmiki Jayanti</td>
+                            </tr>
+                            <tr class="month-row">
+                                <td colspan="3"><span class="month-title">November 2026</span></td>
+                            </tr>
+                            <tr>
+                                <td>6-Nov-26 to 11-Nov-26</td>
+                                <td>Friday to Wednesday</td>
+                                <td>Deepawali Holidays</td>
+                            </tr>
+                            <tr>
+                                <td>24-Nov-26</td>
+                                <td>Tuesday</td>
+                                <td>Gurunanak Jayanti</td>
+                            </tr>
+                            <tr class="month-row">
+                                <td colspan="3"><span class="month-title">December 2026</span></td>
+                            </tr>
+                            <tr>
+                                <td>25-Dec-26</td>
+                                <td>Friday</td>
+                                <td>Christmas</td>
+                            </tr>
+                            <tr class="month-row">
+                                <td colspan="3"><span class="month-title">January 2027</span></td>
+                            </tr>
+                            <tr class="empty-row"><td>-</td><td>-</td><td>No holiday listed</td></tr>
+                            <tr class="month-row">
+                                <td colspan="3"><span class="month-title">February 2027</span></td>
+                            </tr>
+                            <tr class="empty-row"><td>-</td><td>-</td><td>No holiday listed</td></tr>
+                            <tr class="month-row">
+                                <td colspan="3"><span class="month-title">March 2027</span></td>
+                            </tr>
+                            <tr>
+                                <td>6-Mar-27</td>
+                                <td>Saturday</td>
+                                <td>Maha Shivratri</td>
                             </tr>
                         </tbody>
                     </table>
