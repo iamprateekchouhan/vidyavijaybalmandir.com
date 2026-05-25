@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Vidya Vijay Bal Mandir | Gallery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900,300">
+    <link type="text/css" rel="stylesheet" href="assets/font/font-icon/font-awesome-4.4.0/css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="assets/libs/bootstrap-3.3.5/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/color-1.css">
+    <style>
+        .gallery-page {
+            padding: 70px 0;
+            background: #f7f9fc;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-card {
+            display: block;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 12px 28px rgba(37, 54, 79, 0.12);
+        }
+
+        .gallery-card img,
+        .gallery-card video {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.25s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .gallery-card video {
+            background: #111827;
+        }
+
+        .gallery-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 0 0 28px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-tab {
+            min-width: 120px;
+            height: 42px;
+            padding: 0 18px;
+            border: 1px solid #dfe7ef;
+            border-radius: 4px;
+            background: #fff;
+            color: #25364f;
+            font-weight: 900;
+            line-height: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .gallery-tab:hover,
+        .gallery-tab.active {
+            border-color: #86bc42;
+            background: #86bc42;
+            color: #fff;
+        }
+
+        .gallery-pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-page-btn {
+            min-width: 42px;
+            height: 42px;
+            padding: 0 14px;
+            border: 1px solid #dfe7ef;
+            border-radius: 4px;
+            background: #fff;
+            color: #25364f;
+            font-weight: 700;
+            line-height: 40px;
+            text-align: center;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .gallery-page-btn:hover,
+        .gallery-page-btn.active {
+            border-color: #86bc42;
+            background: #86bc42;
+            color: #fff;
+        }
+
+        .gallery-page-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.45;
+        }
+
+        .gallery-count {
+            width: 100%;
+            color: #6f7d8f;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        @media (max-width: 991px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .gallery-page {
+                padding: 45px 0;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .gallery-card img,
+            .gallery-card video {
+                height: 170px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-main homepage-01">
+        <div class="container">
+            <div class="header-main-wrapper">
+                <div class="navbar-heade">
+                    <div class="logo pull-left"><a href="index.html" class="header-logo"><img src="assets/images/logo.jpg" alt=""/> </a></div>
+                    <button type="button" data-toggle="collapse" data-target=".navigation" class="navbar-toggle edugate-navbar">
+                        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    </button>
+                </div>
+                <nav class="navigation collapse navbar-collapse pull-right">
+                    <ul class="nav-links nav navbar-nav">
+                        <li class="dropdown"><a href="index.html" class="main-menu">Home</a></li>
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">About Us<span class="fa fa-angle-down icons-dropdown"></span></a>
+                            <ul class="dropdown-menu edugate-dropdown-menu-1">
+                                <li><a href="index.html#vision" class="link-page">Vision and Mission </a></li>
+                                <li><a href="director_message.html" class="link-page">Director's Message</a></li>
+                                <li><a href="principal_message.html" class="link-page">Principal's Desk</a></li>
+                                <li><a href="board_of_director.html" class="link-page">Board of Directors</a></li>
+                                <li><a href="mandatory_public_disclosure.html" class="link-page">Mandatory Public Disclosure</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Admission<span class="fa fa-angle-down icons-dropdown"></span></a>
+                            <ul class="dropdown-menu edugate-dropdown-menu-1">
+                                <li><a href="admission_enquiry.html" class="link-page">Admission Form</a></li>
+                                <li><a href="admission_process.html" class="link-page">Admission Process</a></li>
+                                <li><a href="fee_structure.html" class="link-page">Fee Structure</a></li>
+                                <li><a href="school_time_uniform.html" class="link-page">School Time & Uniform</a></li>
+                                <li><a href="#" class="link-page">Book list</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="javascript:void(0)" class="main-menu">Academic<span class="fa fa-angle-down icons-dropdown"></span></a>
+                            <ul class="dropdown-menu edugate-dropdown-menu-1">
+                                <li><a href="staff_details.html" class="link-page">Staff Details</a></li>
+                                <li><a href="#" class="link-page">Holiday List</a></li>
+                                <li><a href="result.html" class="link-page">Results</a></li>
+                                <li><a href="issued_tc.html" class="link-page">Issued T.C.</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown active"><a href="gallery.html" class="main-menu">Gallery</a></li>
+                        <li class="dropdown"><a href="#contact" class="main-menu">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <h1 style="font-size: 29px;">Vidya Vijay Bal Mandir</h1>
+            <p>CBSE Affiliation No : 1030995</p>
+        </div>
+    </div>
+</header>
+<div id="wrapper-content">
+    <div class="section background-opacity page-title set-height-top">
+        <div class="container">
+            <div class="page-title-wrapper">
+                <h2 class="captions">Gallery</h2>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="#">Gallery</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <section class="gallery-page">
+        <div class="container">
+            <div class="group-title-index">
+                <h4 class="top-title">SEE AND FEEL IT</h4>
+                <h2 class="center-title">Pictures and Gallery</h2>
+                <div class="bottom-title"><i class="bottom-icon icon-a-1-01-01"></i></div>
+            </div>
+            <div class="gallery-tabs" aria-label="Gallery media type">
+                <button type="button" class="gallery-tab active" data-gallery-tab="image">Images</button>
+                <button type="button" class="gallery-tab" data-gallery-tab="video">Videos</button>
+            </div>
+            <div class="gallery-grid">
+                
+                
+                
+                <a href="assets/images/images-2026/1.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/1.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/2.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/2.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/3.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/3.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/4.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/4.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/5.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/5.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/6.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/6.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/7.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/7.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.21.51 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.21.51 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.21.53 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.21.53 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.21.54 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.21.54 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.29.25 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.29.25 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.29.27 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.29.27 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.29.32 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.29.32 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.29.49 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.29.49 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.30.10 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.30.10 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.30.22 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.30.22 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.30.33 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.30.33 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.30.41 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.30.41 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.30.52 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.30.52 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM (1).jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM (1).jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM (2).jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM (2).jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM (3).jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM (3).jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM (4).jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM (4).jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM (5).jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM (5).jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.50 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.51 PM (1).jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.51 PM (1).jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.51 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.31.51 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.32.12 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.32.12 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.32.13 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.32.13 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.32.47 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.32.47 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.33.02 PM.jpeg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/images-2026/WhatsApp Image 2026-05-25 at 12.33.02 PM.jpeg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/1.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/1.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/10.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/10.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/11.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/11.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/12.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/12.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/13.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/13.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/14.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/14.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/15.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/15.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/16.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/16.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/17.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/17.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/18.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/18.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/19.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/19.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/2.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/2.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/20.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/20.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/21.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/21.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/22.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/22.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/23.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/23.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/24.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/24.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/25.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/25.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/26.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/26.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/27.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/27.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/28.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/28.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/29.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/29.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/3.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/3.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/30.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/30.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/31.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/31.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/4.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/4.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/5.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/5.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/6.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/6.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/7.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/7.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/8.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/8.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/9.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/9.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20190716_132703.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20190716_132703.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20190729_085507.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20190729_085507.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20190729_085904.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20190729_085904.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20190730_130604.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20190730_130604.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20190810_111302.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20190810_111302.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20190905_122259.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20190905_122259.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20190917_122050.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20190917_122050.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20190917_132928.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20190917_132928.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20191024_114001.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20191024_114001.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20191024_120649.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20191024_120649.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20191024_120942.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20191024_120942.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20191105_125201.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20191105_125201.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20191108_175153.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20191108_175153.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20191114_121130.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20191114_121130.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20191114_121429.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20191114_121429.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20191123_112216.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20191123_112216.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20191126_112045.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20191126_112045.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20191126_132811.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20191126_132811.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG_20191207_113730.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG_20191207_113730.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG-20190411-WA0014.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG-20190411-WA0014.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG-20190818-WA0002.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG-20190818-WA0002.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG-20190914-WA0008.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG-20190914-WA0008.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG-20191005-WA0078.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG-20191005-WA0078.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/IMG-20191122-WA0003.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/IMG-20191122-WA0003.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/Physics.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/Physics.jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/WhatsApp Image 2019-11-18 at 12.47.35 PM (1).jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/WhatsApp Image 2019-11-18 at 12.47.35 PM (1).jpg" alt="Gallery image"></a>
+                <a href="assets/images/new-images/WhatsApp Image 2019-11-30 at 11.38.16 AM.jpg" target="_blank" class="gallery-card" data-gallery-type="image"><img src="assets/images/new-images/WhatsApp Image 2019-11-30 at 11.38.16 AM.jpg" alt="Gallery image"></a>
+                <div class="gallery-card" data-gallery-type="video"><video src="assets/images/images-2026/Reel 1.mp4" controls preload="metadata"></video></div>
+                <div class="gallery-card" data-gallery-type="video"><video src="assets/images/images-2026/reel 2.mp4" controls preload="metadata"></video></div>
+                <div class="gallery-card" data-gallery-type="video"><video src="assets/images/images-2026/Reel 3.mp4" controls preload="metadata"></video></div>
+                <div class="gallery-card" data-gallery-type="video"><video src="assets/images/images-2026/WhatsApp Video 2026-05-25 at 12.23.47 PM.mp4" controls preload="metadata"></video></div>
+            </div>
+            <div class="gallery-pagination" aria-label="Gallery pagination">
+                <button type="button" class="gallery-page-btn" id="gallery-prev">Previous</button>
+                <div id="gallery-pages"></div>
+                <button type="button" class="gallery-page-btn" id="gallery-next">Next</button>
+                <div class="gallery-count" id="gallery-count"></div>
+            </div>
+        </div>
+    </section>
+</div>
+<footer>
+    <div class="footer-main" id="contact">
+        <div class="container">
+            <div class="footer-main-wrapper">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="edugate-widget widget">
+                            <div class="title-widget">Vidya Vijay Bal Mandir</div>
+                            <div class="content-widget">
+                                <p>Excellent education, Nominal fees</p>
+                                <div class="info-list">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-envelope-o"></i><a href="#">vidyavijaybalmandir@gmail.com</a></li>
+                                        <li><i class="fa fa-phone"></i><a href="https://api.whatsapp.com/send?phone=918989294043">P: 0731-2570599, 9425902849, 9826078369, 8989294043</a></li>
+                                        <li><i class="fa fa-map-marker"></i><a href="https://www.google.com/maps/search/?api=1&amp;query=Vidya%20Vijay%20Bal%20Mandir%20SS-4%20Slice-4%20Scheme%20No.%2078%20Vijay%20Nagar%20Indore%20Madhya%20Pradesh%20452010" target="_blank" rel="noopener noreferrer">SS-4, Slice-4, Scheme no. 78, Vijay Nagar, Indore (M.P.)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="useful-link-widget widget">
+                            <div class="title-widget">USEFUL LINKS</div>
+                            <div class="content-widget">
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-angle-right"></i><a href="index.html#about_us">About Us</a></li>
+                                    <li><i class="fa fa-angle-right"></i><a href="admission_process.html">Admission Process</a></li>
+                                    <li><i class="fa fa-angle-right"></i><a href="fee_structure.html">Fee Structure</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="mailing-widget widget">
+                            <div class="title-widget">CONNECT WITH US</div>
+                            <div class="content-widget">
+                                <p>For admission enquiries, call or send your details on WhatsApp.</p>
+                                <div class="socials">
+                                    <a href="https://www.facebook.com/vidyavijaybalmandirschool" class="facebook" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://instagram.com/vidyavijay_balmandir?igshid=YmMyMTA2M2Y=" class="facebook" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="assets/libs/jquery/jquery-2.1.4.min.js"></script>
+<script src="assets/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script>
+    (function () {
+        var perPage = 20;
+        var currentPage = 1;
+        var currentType = 'image';
+        var cards = Array.prototype.slice.call(document.querySelectorAll('.gallery-card'));
+        var tabs = Array.prototype.slice.call(document.querySelectorAll('.gallery-tab'));
+        var pagesWrap = document.getElementById('gallery-pages');
+        var prevBtn = document.getElementById('gallery-prev');
+        var nextBtn = document.getElementById('gallery-next');
+        var countText = document.getElementById('gallery-count');
+
+        function getVisibleCards() {
+            return cards.filter(function (card) {
+                return card.getAttribute('data-gallery-type') === currentType;
+            });
+        }
+
+        function renderPageButtons(pageCount) {
+            pagesWrap.innerHTML = '';
+            for (var i = 1; i <= pageCount; i++) {
+                var button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'gallery-page-btn';
+                button.textContent = i;
+                button.setAttribute('data-page', i);
+                pagesWrap.appendChild(button);
+            }
+        }
+
+        function showPage(page, shouldScroll) {
+            var visibleCards = getVisibleCards();
+            var pageCount = Math.ceil(visibleCards.length / perPage) || 1;
+            currentPage = page;
+            var start = (currentPage - 1) * perPage;
+            var end = start + perPage;
+
+            cards.forEach(function (card) {
+                card.style.display = 'none';
+            });
+
+            visibleCards.forEach(function (card, index) {
+                card.style.display = index >= start && index < end ? 'block' : 'none';
+            });
+
+            Array.prototype.forEach.call(pagesWrap.querySelectorAll('.gallery-page-btn'), function (button) {
+                button.classList.toggle('active', Number(button.getAttribute('data-page')) === currentPage);
+            });
+
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage === pageCount;
+            countText.textContent = 'Showing ' + (start + 1) + '-' + Math.min(end, visibleCards.length) + ' of ' + visibleCards.length + ' ' + (currentType === 'video' ? 'videos' : 'images');
+
+            if (shouldScroll) {
+                document.querySelector('.gallery-page').scrollIntoView({behavior: 'smooth', block: 'start'});
+            }
+        }
+
+        function setType(type) {
+            currentType = type;
+            currentPage = 1;
+            var pageCount = Math.ceil(getVisibleCards().length / perPage) || 1;
+
+            tabs.forEach(function (tab) {
+                tab.classList.toggle('active', tab.getAttribute('data-gallery-tab') === currentType);
+            });
+
+            renderPageButtons(pageCount);
+            showPage(1, true);
+        }
+
+        pagesWrap.addEventListener('click', function (event) {
+            var page = Number(event.target.getAttribute('data-page'));
+            if (page) {
+                showPage(page, true);
+            }
+        });
+
+        prevBtn.addEventListener('click', function () {
+            if (currentPage > 1) {
+                showPage(currentPage - 1, true);
+            }
+        });
+
+        nextBtn.addEventListener('click', function () {
+            var pageCount = Math.ceil(getVisibleCards().length / perPage) || 1;
+            if (currentPage < pageCount) {
+                showPage(currentPage + 1, true);
+            }
+        });
+
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                setType(tab.getAttribute('data-gallery-tab'));
+            });
+        });
+
+        renderPageButtons(Math.ceil(getVisibleCards().length / perPage) || 1);
+        showPage(1, false);
+    }());
+</script>
+</body>
+</html>

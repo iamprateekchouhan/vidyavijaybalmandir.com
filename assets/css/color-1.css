@@ -1597,6 +1597,7 @@ footer {
     color: #86bc42;
     padding-bottom: 40px;
     font-size: 16px;
+    font-weight: 700;
     text-align: left
 }
 
@@ -1823,21 +1824,31 @@ footer {
     margin: 0px
 }
 
-.useful-link-list ul li {
+.footer-main .useful-link-widget .content-widget > ul {
+    padding: 0;
+    margin: 0
+}
+
+.useful-link-list ul li, .footer-main .useful-link-widget .content-widget > ul li {
     margin-bottom: 15px;
     display: table;
     line-height: 24px
 }
 
-.useful-link-list ul li a {
+.useful-link-list ul li a, .footer-main .useful-link-widget .content-widget > ul li a {
+    color: #fff;
     display: table-cell
 }
 
-.useful-link-list ul li i {
+.useful-link-list ul li i, .footer-main .useful-link-widget .content-widget > ul li i {
     display: table-cell;
     width: 15px;
     color: #86bc42;
     font-weight: bold
+}
+
+.useful-link-list ul li a:hover, .footer-main .useful-link-widget .content-widget > ul li a:hover {
+    color: #86bc42
 }
 
 .gallery-widget .gallery-list a {
@@ -2195,7 +2206,7 @@ footer {
 }
 
 .slider-item .slider-1, .slider-item .slider-2, .slider-item .slider-3 {
-    background-image: url(../images/banner1.jpeg);
+    background-image: url(../images/images-2026/3.jpeg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2206,6 +2217,10 @@ footer {
 
 .slider-item .slider-2 {
     background-image: url(../images/banner2.jpeg)
+}
+
+.slider-item .slider-1 {
+    background-position: center bottom
 }
 
 .slider-item .slider-2 .slider-caption {

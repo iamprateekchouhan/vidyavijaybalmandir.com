@@ -9,51 +9,239 @@
     <link type="text/css" rel="stylesheet" href="assets/css/color-1.css">
     <style>
         .enquiry-page {
-            min-height: 560px;
-            padding: 70px 0;
-            background: #f5f7fb;
+            position: relative;
+            min-height: 640px;
+            padding: 82px 0;
+            overflow: hidden;
+            background:
+                linear-gradient(135deg, rgba(134, 188, 66, 0.12), rgba(255, 190, 52, 0.15)),
+                url("assets/images/background-why-choose-us.jpg") center/cover no-repeat;
         }
 
-        .enquiry-panel {
-            max-width: 720px;
+        .enquiry-page:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            background: rgba(255, 255, 255, 0.86);
+        }
+
+        .enquiry-shell {
+            position: relative;
+            max-width: 1040px;
             margin: 0 auto;
-            padding: 34px;
+            overflow: hidden;
             background: #fff;
-            border: 1px solid #e3e8f0;
+            border: 1px solid rgba(37, 54, 79, 0.08);
+            border-radius: 8px;
+            box-shadow: 0 26px 70px rgba(37, 54, 79, 0.16);
         }
 
-        .enquiry-panel h2 {
-            margin: 0 0 26px;
-            color: #25364f;
-            font-size: 28px;
-            font-weight: 700;
+        .enquiry-shell > .row {
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        .enquiry-panel label {
-            color: #25364f;
-            font-weight: 700;
+        .enquiry-shell > .row:before,
+        .enquiry-shell > .row:after {
+            display: none;
         }
 
-        .enquiry-panel .form-control {
-            height: 44px;
-            border-radius: 0;
-            box-shadow: none;
+        .no-margin {
+            margin-left: 0;
+            margin-right: 0;
         }
 
-        .enquiry-panel .btn {
-            margin-top: 10px;
-            padding: 12px 26px;
-            border-radius: 0;
-            background: #86bc42;
-            border-color: #86bc42;
+        .no-padding {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .enquiry-info {
+            height: 100%;
+            min-height: 100%;
+            padding: 44px 38px;
             color: #fff;
-            font-weight: 700;
+            background:
+                linear-gradient(145deg, rgba(37, 54, 79, 0.92), rgba(134, 188, 66, 0.86)),
+                url("assets/images/banner-1.jpg") center/cover no-repeat;
+        }
+
+        .enquiry-info .eyebrow {
+            display: inline-block;
+            margin-bottom: 16px;
+            padding: 7px 13px;
+            border: 1px solid rgba(255, 255, 255, 0.36);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0;
             text-transform: uppercase;
         }
 
-        .enquiry-panel .btn:hover {
-            background: #6da332;
-            border-color: #6da332;
+        .enquiry-info h2 {
+            margin: 0 0 16px;
+            color: #fff;
+            font-size: 34px;
+            line-height: 1.24;
+            font-weight: 900;
+        }
+
+        .enquiry-info p {
+            margin-bottom: 28px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .enquiry-highlights {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .enquiry-highlights li {
+            position: relative;
+            margin-bottom: 15px;
+            padding-left: 36px;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .enquiry-highlights .fa {
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.18);
+            color: #fff;
+            line-height: 25px;
+            text-align: center;
+        }
+
+        .enquiry-panel {
+            padding: 42px 40px;
+        }
+
+        .enquiry-panel h3 {
+            margin: 0 0 9px;
+            color: #25364f;
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        .enquiry-panel .form-note {
+            margin-bottom: 26px;
+            color: #6f7d8f;
+            line-height: 1.65;
+        }
+
+        .enquiry-panel label {
+            margin-bottom: 8px;
+            color: #25364f;
+            font-size: 13px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .enquiry-panel .form-group {
+            margin-bottom: 18px;
+        }
+
+        .field-wrap {
+            position: relative;
+        }
+
+        .field-wrap .fa {
+            position: absolute;
+            top: 15px;
+            left: 16px;
+            color: #86bc42;
+            font-size: 16px;
+        }
+
+        .enquiry-panel .form-control {
+            height: 48px;
+            padding-left: 45px;
+            border: 1px solid #dfe7ef;
+            border-radius: 6px;
+            color: #25364f;
+            box-shadow: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .enquiry-panel .form-control:focus {
+            border-color: #86bc42;
+            box-shadow: 0 0 0 3px rgba(134, 188, 66, 0.16);
+        }
+
+        .enquiry-panel .btn {
+            width: 100%;
+            margin-top: 8px;
+            padding: 14px 24px;
+            border: 0;
+            border-radius: 6px;
+            background: #86bc42;
+            color: #fff;
+            font-weight: 900;
+            text-transform: uppercase;
+            box-shadow: 0 12px 24px rgba(134, 188, 66, 0.28);
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .enquiry-panel .btn:hover,
+        .enquiry-panel .btn:focus {
+            background: #72a934;
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 15px 28px rgba(134, 188, 66, 0.34);
+        }
+
+        .enquiry-panel .btn .fa {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .enquiry-contact {
+            margin-top: 17px;
+            color: #7c8796;
+            font-size: 13px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        @media (max-width: 991px) {
+            .enquiry-info {
+                min-height: 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .enquiry-page {
+                padding: 44px 15px;
+            }
+
+            .enquiry-shell > .row {
+                display: block;
+            }
+
+            .enquiry-info,
+            .enquiry-panel {
+                padding: 32px 24px;
+            }
+
+            .enquiry-info h2 {
+                font-size: 28px;
+            }
+
+            .enquiry-panel h3 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -93,10 +281,11 @@
                             <ul class="dropdown-menu edugate-dropdown-menu-1">
                                 <li><a href="staff_details.html" class="link-page">Staff Details</a></li>
                                 <li><a href="#" class="link-page">Holiday List</a></li>
-                                <li><a href="#" class="link-page">Results</a></li>
+                                <li><a href="result.html" class="link-page">Results</a></li>
                                 <li><a href="issued_tc.html" class="link-page">Issued T.C.</a></li>
                             </ul>
                         </li>
+                        <li class="dropdown"><a href="gallery.html" class="main-menu">Gallery</a></li>
                         <li class="dropdown"><a href="index.html#contact" class="main-menu">Contact</a></li>
                     </ul>
                 </nav>
@@ -120,35 +309,131 @@
     </div>
     <section class="enquiry-page">
         <div class="container">
-            <div class="enquiry-panel">
-                <h2>Admission Enquiry Form</h2>
-                <form id="admission-enquiry-form">
-                    <div class="form-group">
-                        <label for="student_name">Student's Name</label>
-                        <input type="text" id="student_name" class="form-control" required>
+            <div class="enquiry-shell">
+                <div class="row no-margin">
+                    <div class="col-md-5 col-sm-12 no-padding">
+                        <div class="enquiry-info">
+                            <span class="eyebrow">Admissions Open</span>
+                            <h2>Start your child's learning journey with us</h2>
+                            <p>Share a few details and our admission team will connect with you on WhatsApp for the next steps.</p>
+                            <ul class="enquiry-highlights">
+                                <li><i class="fa fa-check"></i>Quick admission guidance</li>
+                                <li><i class="fa fa-check"></i>CBSE affiliated school</li>
+                                <li><i class="fa fa-check"></i>Personal support for parents</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="father_name">Father's Name</label>
-                        <input type="text" id="father_name" class="form-control" required>
+                    <div class="col-md-7 col-sm-12 no-padding">
+                        <div class="enquiry-panel">
+                            <h3>Admission Enquiry Form</h3>
+                            <p class="form-note">Fill the form below and submit your enquiry directly on WhatsApp.</p>
+                            <form id="admission-enquiry-form">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="student_name">Student's Name</label>
+                                            <div class="field-wrap">
+                                                <i class="fa fa-user"></i>
+                                                <input type="text" id="student_name" class="form-control" placeholder="Enter student name" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="father_name">Father's Name</label>
+                                            <div class="field-wrap">
+                                                <i class="fa fa-male"></i>
+                                                <input type="text" id="father_name" class="form-control" placeholder="Enter father's name" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="admission_class">Admission Class</label>
+                                            <div class="field-wrap">
+                                                <i class="fa fa-graduation-cap"></i>
+                                                <input type="text" id="admission_class" class="form-control" placeholder="Example: Class 1" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="mobile_no">Mobile No.</label>
+                                            <div class="field-wrap">
+                                                <i class="fa fa-phone"></i>
+                                                <input type="tel" id="mobile_no" class="form-control" placeholder="Enter mobile number" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="email_id">Email ID</label>
+                                            <div class="field-wrap">
+                                                <i class="fa fa-envelope"></i>
+                                                <input type="email" id="email_id" class="form-control" placeholder="Enter email address" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn"><i class="fa fa-whatsapp"></i>Send Enquiry on WhatsApp</button>
+                                <p class="enquiry-contact">Our team will reply with admission details, documents required, and visit guidance.</p>
+                            </form>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="admission_class">Admission Class</label>
-                        <input type="text" id="admission_class" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="mobile_no">Mobile No.</label>
-                        <input type="tel" id="mobile_no" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email_id">Email ID</label>
-                        <input type="email" id="email_id" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn">Send Enquiry</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
 </div>
+<footer>
+    <div class="footer-main" id="contact">
+        <div class="container">
+            <div class="footer-main-wrapper">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="edugate-widget widget">
+                            <div class="title-widget">Vidya Vijay Bal Mandir</div>
+                            <div class="content-widget">
+                                <p>Excellent education, Nominal fees</p>
+                                <div class="info-list">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-envelope-o"></i><a href="#">vidyavijaybalmandir@gmail.com</a></li>
+                                        <li><i class="fa fa-phone"></i><a href="https://api.whatsapp.com/send?phone=918989294043">P: 0731-2570599, 9425902849, 9826078369, 8989294043</a></li>
+                                        <li><i class="fa fa-map-marker"></i><a href="https://www.google.com/maps/search/?api=1&amp;query=Vidya%20Vijay%20Bal%20Mandir%20SS-4%20Slice-4%20Scheme%20No.%2078%20Vijay%20Nagar%20Indore%20Madhya%20Pradesh%20452010" target="_blank" rel="noopener noreferrer">SS-4, Slice-4, Scheme no. 78, Vijay Nagar, Indore (M.P.)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="useful-link-widget widget">
+                            <div class="title-widget">USEFUL LINKS</div>
+                            <div class="content-widget">
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-angle-right"></i><a href="index.html#about_us">About Us</a></li>
+                                    <li><i class="fa fa-angle-right"></i><a href="admission_process.html">Admission Process</a></li>
+                                    <li><i class="fa fa-angle-right"></i><a href="fee_structure.html">Fee Structure</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="mailing-widget widget">
+                            <div class="title-widget">CONNECT WITH US</div>
+                            <div class="content-widget">
+                                <p>For admission enquiries, call or send your details on WhatsApp.</p>
+                                <div class="socials">
+                                    <a href="https://www.facebook.com/vidyavijaybalmandirschool" class="facebook" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://instagram.com/vidyavijay_balmandir?igshid=YmMyMTA2M2Y=" class="facebook" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="assets/libs/jquery/jquery-2.1.4.min.js"></script>
 <script src="assets/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script>
