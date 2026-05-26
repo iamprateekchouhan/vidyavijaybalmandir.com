@@ -33,6 +33,27 @@
         p{
             font-size: 16px;
         }
+
+        .uniform-images {
+            display: flex;
+            align-items: flex-start;
+            gap: 2px;
+            flex-wrap: wrap;
+        }
+
+        .uniform-images img {
+            height: 400px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 767px) {
+            .uniform-images img {
+                height: auto;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body><!-- HEADER-->
@@ -175,8 +196,10 @@
                         
                                 <h3>Uniform</h3>
                                
-                          <img src="assets/images/uni3.jpeg" width="400px">
-                          <img src="assets/images/uni2.jpeg" width="400px">
+                          <div class="uniform-images">
+                              <img src="assets/images/uni3.jpeg" alt="School uniform">
+                              <img src="assets/images/uni2.jpeg" alt="School uniform">
+                          </div>
                       
                     </div>
 
